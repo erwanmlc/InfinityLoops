@@ -38,20 +38,14 @@ public class GUI {
 		// construction
 		Runnable task = new Runnable() {
 			public void run() {
-
-				try {
-					Grid grid = Checker.buildGrid(inputFile);
-					SwingUtilities.invokeLater(new Runnable() {
-						public void run() {
-							GUI window;
-							window = new GUI(grid);
-							window.frame.setVisible(true);
-						}
-					});
-				} catch (IOException e) {
-					throw new NullPointerException("Error with input file");
-				}
-
+				Grid grid = Checker.buildGrid(inputFile);
+				SwingUtilities.invokeLater(new Runnable() {
+					public void run() {
+						GUI window;
+						window = new GUI(grid);
+						window.frame.setVisible(true);
+					}
+				});
 			}
 		};
 		new Thread(task).start();
@@ -87,10 +81,10 @@ public class GUI {
 	 *            the piece
 	 * @return an image icon
 	 */
-	private ImageIcon getImageIcon(Piece p) {
+	/*private ImageIcon getImageIcon(Piece p) {
 		//To be implemented
 		
 		
-	}
+	}*/
 
 }
