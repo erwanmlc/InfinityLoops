@@ -27,7 +27,7 @@ public class Generator {
 	 */
 	public static void generateLevel(String fileName, Grid inputGrid) {
       
-		// To be implemented
+		// Test
 	}
 	public static int[] copyGrid(Grid filledGrid, Grid inputGrid, int i, int j) {
 		Piece p;
