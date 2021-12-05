@@ -1,6 +1,10 @@
 package fr.dauphine.JavaAvance.Solve;
 
 
+import java.io.*;
+import java.nio.charset.*;
+import java.nio.file.*;
+import java.util.ArrayList;
 import java.util.Random;
 
 import fr.dauphine.JavaAvance.Components.Piece;
@@ -26,7 +30,91 @@ public class Generator {
 	 * @throws UnsupportedEncodingException
 	 */
 	public static void generateLevel(String fileName, Grid inputGrid) {
-      
+		Path path = Paths.get(fileName);
+		try {
+			if (Files.notExists(path)) {
+				Files.createFile(path);
+			} else {
+				System.out.println("File : "+fileName+" already exists!");
+				System.exit(-1);
+			}
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+
+		try(BufferedWriter writer = Files.newBufferedWriter(path, Charset.forName("UTF-8"))){
+			ArrayList<Integer> possiblesTypes = new ArrayList<Integer>();
+			Piece left, top;
+			boolean lbool = false, tbool = false;
+			int i, j, type, ori;
+
+			writer.write(String.valueOf(inputGrid.getWidth()));
+			writer.newLine();
+			writer.write(String.valueOf(inputGrid.getHeight()));
+			writer.newLine();
+			for (i=0; i<inputGrid.getHeight(); i++) {
+				for (j=0; j<inputGrid.getWidth(); j++) {
+					inputGrid.setPiece(i,j,new Piece(i,j));
+					left = inputGrid.leftNeighbor(inputGrid.getPiece(i,j));
+					if(left != null && left.hasRightConnector()) {
+						lbool = true;
+					}
+					top = inputGrid.topNeighbor(inputGrid.getPiece(i,j));
+					if(top != null && top.hasBottomConnector()) {
+						tbool = true;
+					}
+					if (inputGrid.isCorner(i,j)) {	// PieceType : 0, 1 ou 5
+						possiblesTypes.add(0);
+						possiblesTypes.add(1);
+						possiblesTypes.add(5);
+						if (lbool ^ tbool) {
+							possiblesTypes.remove(Integer.valueOf(5)); // if it is the bottom right corner and and only one connector
+						}
+					} else if (inputGrid.isBorderColumn(i,j) || inputGrid.isBorderLine(i,j)) {	// PieceType : 0, 1, 2, 3 ou 5
+						possiblesTypes.add(0);
+						possiblesTypes.add(1);
+						possiblesTypes.add(2);
+						possiblesTypes.add(3);
+						possiblesTypes.add(5);
+					} else {
+						possiblesTypes.add(0);
+						possiblesTypes.add(1);
+						possiblesTypes.add(2);
+						possiblesTypes.add(3);
+						possiblesTypes.add(4);
+						possiblesTypes.add(5);
+					}
+
+					if (lbool && tbool) {
+						possiblesTypes.remove(Integer.valueOf(0));
+						possiblesTypes.remove(Integer.valueOf(1));
+						possiblesTypes.remove(Integer.valueOf(2));
+					} else if (lbool || tbool) {
+						possiblesTypes.remove(Integer.valueOf(0));
+					}
+
+					// we randomly draw a possible PieceType for the current Piece
+					type = new Random().nextInt(possiblesTypes.size());
+					inputGrid.getPiece(i,j).setType(PieceType.getTypefromValue(possiblesTypes.get(type)));
+
+					// we randomly draw an Orientation for the current Piece
+					ori = new Random().nextInt(4);
+					inputGrid.getPiece(i,j).setOrientation(ori);
+
+					// we write the line with the type of the Piece and his orientation separed by a space
+					writer.write(type+" "+ori);
+
+					lbool = false;
+					tbool = false;
+					writer.newLine();
+					possiblesTypes.clear();
+				}
+			}
+		} catch(IOException e){
+			e.printStackTrace();
+		}
+
+
 		// Test
 	}
 	public static int[] copyGrid(Grid filledGrid, Grid inputGrid, int i, int j) {

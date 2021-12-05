@@ -61,7 +61,9 @@ public class Main {
             outputFile = cmd.getOptionValue( "o" );
 
             // generate grid and store it to outputFile...
-            //...            
+            //...
+
+            Generator.generateLevel(outputFile, new Grid(width, height));
         }
         else if( cmd.hasOption( "s" ) ) {
             System.out.println("Running phineloop solver.");
