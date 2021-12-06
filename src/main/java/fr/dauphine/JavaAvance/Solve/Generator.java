@@ -64,6 +64,7 @@ public class Generator {
 						tbool = true;
 					}
 					if (inputGrid.isCorner(i,j)) {	// PieceType : 0, 1 ou 5
+						System.out.println("isCorner");
 						possiblesTypes.add(0);
 						possiblesTypes.add(1);
 						possiblesTypes.add(5);
@@ -71,12 +72,14 @@ public class Generator {
 							possiblesTypes.remove(Integer.valueOf(5)); // if it is the bottom right corner and and only one connector
 						}
 					} else if (inputGrid.isBorderColumn(i,j) || inputGrid.isBorderLine(i,j)) {	// PieceType : 0, 1, 2, 3 ou 5
+						System.out.println("isBorder or isColumn");
 						possiblesTypes.add(0);
 						possiblesTypes.add(1);
 						possiblesTypes.add(2);
 						possiblesTypes.add(3);
 						possiblesTypes.add(5);
 					} else {
+						System.out.println("isNormal");
 						possiblesTypes.add(0);
 						possiblesTypes.add(1);
 						possiblesTypes.add(2);
