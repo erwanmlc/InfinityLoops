@@ -62,8 +62,12 @@ public class Main {
 
             // generate grid and store it to outputFile...
             //...
+            Grid grid = Checker.buildGrid(outputFile);
+            System.out.println(grid);
 
-            Generator.generateLevel(outputFile, new Grid(width, height));
+            /*Grid grid = new Grid(width, height);
+            Generator.generateLevel(outputFile, grid);
+            System.out.println(grid);*/
         }
         else if( cmd.hasOption( "s" ) ) {
             System.out.println("Running phineloop solver.");
@@ -74,7 +78,7 @@ public class Main {
         
             // load grid from inputFile, solve it and store result to outputFile...
             // ...
-            
+
             System.out.println("SOLVED: " + solved);            
         }
         

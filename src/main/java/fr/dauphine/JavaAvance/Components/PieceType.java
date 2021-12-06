@@ -141,6 +141,7 @@ public enum PieceType {
         ArrayList<Orientation> al = new ArrayList<Orientation>();
         switch (this) {
             case VOID:
+                al.add(Orientation.NORTH);
                 break;
             case BAR:
                 al.add(Orientation.NORTH);
