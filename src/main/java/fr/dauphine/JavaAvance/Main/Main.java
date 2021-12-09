@@ -65,9 +65,9 @@ public class Main {
             Grid grid = Checker.buildGrid(outputFile);
             System.out.println(grid);
 
-            /*Grid grid = new Grid(width, height);
-            Generator.generateLevel(outputFile, grid);
-            System.out.println(grid);*/
+            // Grid grid = new Grid(width, height);
+            // Generator.generateLevel(outputFile, grid);
+            // System.out.println(grid);
         }
         else if( cmd.hasOption( "s" ) ) {
             System.out.println("Running phineloop solver.");

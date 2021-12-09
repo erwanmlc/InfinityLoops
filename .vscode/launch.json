@@ -1,0 +1,29 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "fr.dauphine.JavaAvance.Main.Main",
+            "projectName": "gitLoops",
+            "args": "-g 100x100 -o outputfile"
+        },
+        {
+            "type": "java",
+            "name": "Launch Solver",
+            "request": "launch",
+            "mainClass": "fr.dauphine.JavaAvance.Solve.Solver",
+            "projectName": "gitLoops"
+        }
+    ]
+}
