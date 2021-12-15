@@ -83,7 +83,7 @@ public enum Orientation {
 				break;
 			case WEST:
 				tab[0]=p.getPosY();
-				tab[1]=p.getPosX()+1;
+				tab[1]=p.getPosX()-1;
 				break;
 		}
 		return tab;
