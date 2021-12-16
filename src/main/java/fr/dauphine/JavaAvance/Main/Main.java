@@ -8,6 +8,7 @@ import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
+import org.apache.commons.lang.RandomStringUtils;
 
 import fr.dauphine.JavaAvance.GUI.GUI;
 import fr.dauphine.JavaAvance.GUI.Grid;
@@ -59,15 +60,16 @@ public class Main {
             height = Integer.parseInt(gridformat[1]); 
             if(! cmd.hasOption("o")) throw new ParseException("Missing mandatory --output argument.");
             outputFile = cmd.getOptionValue( "o" );
+            outputFile = outputFile + "_" + RandomStringUtils.randomAlphanumeric(4);
 
             // generate grid and store it to outputFile...
             //...
-            Grid grid = Checker.buildGrid(outputFile);
-            System.out.println(grid);
-
-            // Grid grid = new Grid(width, height);
-            // Generator.generateLevel(outputFile, grid);
+            // Grid grid = Checker.buildGrid(outputFile);
             // System.out.println(grid);
+
+            Grid grid = new Grid(width, height);
+            Generator.generateLevel(outputFile, grid);
+            System.out.println(grid);
         }
         else if( cmd.hasOption( "s" ) ) {
             System.out.println("Running phineloop solver.");
