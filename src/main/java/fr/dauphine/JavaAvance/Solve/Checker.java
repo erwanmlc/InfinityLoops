@@ -46,15 +46,17 @@ public class Checker {
         return null;
     }
 
-    /*public void isSolution(Grid grid) {
-        boolean bool = false;
-        if(...) {   // à implémenter
-            bool = true;
-        } else {
-            bool = false;
+    public static boolean isSolution(Grid grid) {
+        Piece[][] pieces = grid.getAllPieces();
+        for(int i=0; i<grid.getHeight(); i++) {
+            for(int j=0; j<grid.getWidth(); j++) {
+                if(!grid.isTotallyConnected(pieces[i][j])) {
+                    return false;
+                }
+            }
         }
-        System.out.println("SOLVED: "+bool);
-    }*/
+        return true;
+    }
 
 // To be implemented
 	

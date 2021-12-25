@@ -91,6 +91,9 @@ public class Main {
             
             // load grid from inputFile and check if it is solved... 
             //...
+            Grid grid = Checker.buildGrid(inputFile);
+            System.out.println(grid);
+            solved = Checker.isSolution(grid);
             System.out.println("SOLVED: " + solved);           
         }
         else {
