@@ -43,6 +43,32 @@ public enum PieceType {
         return pt;
     }
 
+    public int getTypeValue() {
+        int value = 0;
+        switch (this) {
+            case VOID:
+                value = 0;
+                break;
+            case ONECONN:
+                value = 1;
+                break;
+            case BAR:
+                value = 2;
+                break;
+            case TTYPE:
+                value = 3;
+                break;
+            case FOURCONN:
+                value = 4;
+                break;
+            case LTYPE:
+                value = 5;
+                break;
+        }
+        return value;
+    }
+
+
     public Orientation getOrientation(Orientation ori) {
         return ori;
     }

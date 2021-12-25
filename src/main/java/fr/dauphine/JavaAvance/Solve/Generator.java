@@ -151,6 +151,42 @@ public class Generator {
 
 		// Test
 	}
+
+	public static void generateFileFromGrid(String fileName, Grid inputGrid) {
+		Path path = Paths.get(fileName);
+		try {
+			if (Files.notExists(path)) {
+				Files.createFile(path);
+			} else {
+				System.out.println("File : "+fileName+" already exists!");
+				System.exit(-1);
+			}
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+
+		try(BufferedWriter writer = Files.newBufferedWriter(path, Charset.forName("UTF-8"))){
+			writer.write(String.valueOf(inputGrid.getWidth()));
+			writer.newLine();
+			writer.write(String.valueOf(inputGrid.getHeight()));
+			writer.newLine();
+			for (int i=0; i<inputGrid.getHeight(); i++) {
+				for (int j=0; j<inputGrid.getWidth(); j++) {
+					// we write the line with the type of the Piece and his orientation separed by a space
+					writer.write(
+						inputGrid.getPiece(i,j).getType().getTypeValue()
+						+" "
+						+ inputGrid.getPiece(i,j).getOrientation().getOriValueFromType(inputGrid.getPiece(i,j).getType())
+					);
+					writer.newLine();
+				}
+			}
+		} catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+
+
 	public static int[] copyGrid(Grid filledGrid, Grid inputGrid, int i, int j) {
 		Piece p;
 		int hmax = inputGrid.getHeight();

@@ -28,6 +28,61 @@ public enum Orientation {
 		return null;
 	}
 
+	public int getOriValueFromType(PieceType pt) {
+		int value = 0;
+		switch (pt) {
+			case VOID:
+				value = 0;
+			case ONECONN:
+				switch(this) {
+					case NORTH:
+						value = 0;
+					case EAST:
+						value = 1;
+					case SOUTH:
+						value = 2;
+					case WEST:
+						value = 3;
+				}
+			case BAR:
+				switch(this) {
+					case NORTH:
+						value = 0;
+					case EAST:
+						value = 1;
+					case SOUTH:
+						value = 0;
+					case WEST:
+						value = 1;
+				}
+			case TTYPE:
+				switch(this) {
+					case NORTH:
+						value = 0;
+					case EAST:
+						value = 1;
+					case SOUTH:
+						value = 2;
+					case WEST:
+						value = 3;
+				}
+			case FOURCONN:
+				value = 0;
+			case LTYPE:
+				switch(this) {
+					case NORTH:
+						value = 0;
+					case EAST:
+						value = 1;
+					case SOUTH:
+						value = 2;
+					case WEST:
+						value = 3;
+				}
+		}
+		return value;
+	}
+
 	public Orientation turn90() {
 		Orientation ori = this;
 		switch(this) {

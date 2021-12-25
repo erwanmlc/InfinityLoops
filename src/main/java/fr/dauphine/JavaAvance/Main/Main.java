@@ -80,8 +80,15 @@ public class Main {
         
             // load grid from inputFile, solve it and store result to outputFile...
             // ...
+            Grid grid = Checker.buildGrid(inputFile);
+            System.out.println(grid);
+            solved = Checker.isSolution(grid);
+            System.out.println("SOLVED: " + solved);
 
-            System.out.println("SOLVED: " + solved);            
+            System.out.println("\nRunning solver ...\n");
+
+            // lancer le solver
+            Generator.generateFileFromGrid(outputFile, grid);
         }
         
         else if( cmd.hasOption( "c" )) {
