@@ -16,8 +16,9 @@
             "request": "launch",
             "mainClass": "fr.dauphine.JavaAvance.Main.Main",
             "projectName": "gitLoops",
-            // "args": "-g 10x10 -o outputfile"
-            "args": "-c outputfile*"
+            "args": "-g 3x3 -o outputfile"
+            // "args": "-s outputfile* -o solvedfile"
+            // "args": "-c solvedfile"
         },
         {
             "type": "java",

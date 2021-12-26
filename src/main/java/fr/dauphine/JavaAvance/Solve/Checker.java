@@ -47,10 +47,9 @@ public class Checker {
     }
 
     public static boolean isSolution(Grid grid) {
-        Piece[][] pieces = grid.getAllPieces();
         for(int i=0; i<grid.getHeight(); i++) {
             for(int j=0; j<grid.getWidth(); j++) {
-                if(!grid.isTotallyConnected(pieces[i][j])) {
+                if(!grid.isTotallyConnected(grid.getPiece(i,j))) {
                     return false;
                 }
             }

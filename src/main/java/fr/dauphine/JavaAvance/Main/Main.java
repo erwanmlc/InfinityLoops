@@ -88,7 +88,16 @@ public class Main {
             System.out.println("\nRunning solver ...\n");
 
             // lancer le solver
-            Generator.generateFileFromGrid(outputFile, grid);
+            if(Solver.solveExhaustiveSearch(grid)) {
+                System.out.println("solved!");
+                // solved = Checker.isSolution(grid);
+                // System.out.println("SOLVED: " + solved);
+                // System.out.println(grid);
+                Generator.generateFileFromGrid(outputFile, grid);
+            }
+            else {
+                System.out.println("unsolvable!");
+            }
         }
         
         else if( cmd.hasOption( "c" )) {

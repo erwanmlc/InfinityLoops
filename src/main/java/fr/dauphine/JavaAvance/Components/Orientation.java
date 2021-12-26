@@ -37,34 +37,46 @@ public enum Orientation {
 				switch(this) {
 					case NORTH:
 						value = 0;
+						break;
 					case EAST:
 						value = 1;
+						break;
 					case SOUTH:
 						value = 2;
+						break;
 					case WEST:
 						value = 3;
+						break;
 				}
 			case BAR:
 				switch(this) {
 					case NORTH:
 						value = 0;
+						break;
 					case EAST:
 						value = 1;
+						break;
 					case SOUTH:
 						value = 0;
+						break;
 					case WEST:
 						value = 1;
+						break;
 				}
 			case TTYPE:
 				switch(this) {
 					case NORTH:
 						value = 0;
+						break;
 					case EAST:
 						value = 1;
+						break;
 					case SOUTH:
 						value = 2;
+						break;
 					case WEST:
 						value = 3;
+						break;
 				}
 			case FOURCONN:
 				value = 0;
@@ -72,12 +84,16 @@ public enum Orientation {
 				switch(this) {
 					case NORTH:
 						value = 0;
+						break;
 					case EAST:
 						value = 1;
+						break;
 					case SOUTH:
 						value = 2;
+						break;
 					case WEST:
 						value = 3;
+						break;
 				}
 		}
 		return value;
