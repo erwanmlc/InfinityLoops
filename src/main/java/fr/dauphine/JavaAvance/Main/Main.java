@@ -88,7 +88,7 @@ public class Main {
             System.out.println("\nRunning solver ...\n");
 
             // lancer le solver
-            if(Solver.solveExhaustiveSearch(grid)) {
+            if(Solver.solveNonExhaustiveSearch(grid)) {
                 System.out.println("solved!");
                 // solved = Checker.isSolution(grid);
                 // System.out.println("SOLVED: " + solved);
