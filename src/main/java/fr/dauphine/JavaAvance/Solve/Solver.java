@@ -12,6 +12,7 @@ import fr.dauphine.JavaAvance.Components.Orientation;
 import fr.dauphine.JavaAvance.Components.Pair;
 import fr.dauphine.JavaAvance.Components.Piece;
 import fr.dauphine.JavaAvance.Components.PieceType;
+import fr.dauphine.JavaAvance.GUI.GUI;
 import fr.dauphine.JavaAvance.GUI.Grid;
 
 public class Solver {
@@ -102,6 +103,7 @@ public class Solver {
 					new Pair<>(PieceType.LTYPE, Arrays.asList(3))
 				)
 		);
+		//GUI.startGUI(grid);
 		if (backtrack_v2(grid, grid.getPiece(0, 0), hm)) {
 			System.out.println("Nombre de tests effectués: "+i);
 			return true;
@@ -134,6 +136,7 @@ public class Solver {
 					p.setOrientation(ori);
 					// System.out.println(p);
 					grid.setPiece(p.getPosY(), p.getPosX(), p);
+
 					next = grid.getNextPiece(p);
 					if(next != null){
 						backtrack_v2(grid, next, hm);

@@ -109,6 +109,8 @@ public class Main {
             //...
             Grid grid = Checker.buildGrid(inputFile);
             System.out.println(grid);
+
+            GUI.startGUI(inputFile);
             solved = Checker.isSolution(grid);
             System.out.println("SOLVED: " + solved);           
         }
@@ -120,8 +122,7 @@ public class Main {
             HelpFormatter formatter = new HelpFormatter();
             formatter.printHelp( "phineloopgen", options );         
             System.exit(1); // exit with error      
-    }
-        System.exit(0); // exit with success                            
+        }
     }
 	
 }
