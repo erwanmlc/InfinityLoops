@@ -27,8 +27,9 @@ public class Solver {
 
 	// Solver way too slow with grids taller than 3x3
 	public static boolean solveExhaustiveSearch(Grid grid) {
+		i=0;
 		if (backtrack_v1(grid, grid.getPiece(0, 0))) {
-			System.out.println("Nombre de tests effectués: "+i);
+			System.out.println("Nombre de tests effectués: "+i+" (méthode random backtracking)");
 			return true;
 		}
 		else {
@@ -62,6 +63,7 @@ public class Solver {
 
 	// Solver better than the previous one but too slow with grids taller than 30x30
 	public static boolean solveNonExhaustiveSearch(Grid grid) {
+		i=0;
 		HashMap<Pair<Boolean, Boolean>, List<Pair<PieceType,List<Integer>>>> hm = new HashMap<>();
 		hm.put(new Pair<Boolean, Boolean>(false, false),
 				Arrays.asList(	// 0, 1, 5
@@ -103,9 +105,8 @@ public class Solver {
 					new Pair<>(PieceType.LTYPE, Arrays.asList(3))
 				)
 		);
-		//GUI.startGUI(grid);
 		if (backtrack_v2(grid, grid.getPiece(0, 0), hm)) {
-			System.out.println("Nombre de tests effectués: "+i);
+			System.out.println("Nombre de tests effectués: "+i+" (méthode non-exhaustive backtracking)");
 			return true;
 		}
 		else {
@@ -134,13 +135,11 @@ public class Solver {
 				}
 				else {
 					p.setOrientation(ori);
-					// System.out.println(p);
 					grid.setPiece(p.getPosY(), p.getPosX(), p);
 
 					next = grid.getNextPiece(p);
 					if(next != null){
 						backtrack_v2(grid, next, hm);
-						// System.out.println("on descend");
 						if (Checker.isSolution(grid)) {
 							return true;
 						}

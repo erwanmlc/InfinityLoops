@@ -100,7 +100,6 @@ public class GUI implements MouseListener {
 	 */
 	private void initialize(Grid grid) {
 		this.grid = grid;
-		System.out.println("frame");
 		frame = new JFrame();
 		frame.setLocation(100,100);
 		frame.setSize(800,800);
@@ -122,13 +121,7 @@ public class GUI implements MouseListener {
 				pan.add(label);
 			}
 		}
-		//frame.getContentPane().add(label);
-     	//frame.validate();
 		frame.addMouseListener(this);
-		//frame.pack();		
-		// To implement:
-		// creating frame, labels
-		// Implementing method mouse clicked of interface MouseListener.
 	}
 
 	public void mouseClicked(MouseEvent e) {  

@@ -38,7 +38,6 @@ public class Generator {
 				Files.createFile(path);
 			} else {
 				System.out.println("File : "+fileName+" already exists!");
-				System.exit(-1);
 			}
 		} catch(IOException e) {
 			e.printStackTrace();

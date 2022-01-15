@@ -40,6 +40,7 @@ public class Main {
         options.addOption("s", "solve", true, "Solve the grid stored in <arg>.");   
         options.addOption("o", "output", true, "Store the generated or solved grid in <arg>. (Use only with --generate and --solve.)");
         options.addOption("t", "threads", true, "Maximum number of solver threads. (Use only with --solve.)");
+        options.addOption("p", "play", true, "Play infinityloop game with GUI in <arg>. (Use only with --play.)");
         options.addOption("x", "nbcc", true, "Maximum number of connected components. (Use only with --generate.)");
         options.addOption("h", "help", false, "Display this help");
         
@@ -60,12 +61,8 @@ public class Main {
             height = Integer.parseInt(gridformat[1]); 
             if(! cmd.hasOption("o")) throw new ParseException("Missing mandatory --output argument.");
             outputFile = cmd.getOptionValue( "o" );
-            outputFile = outputFile + "_" + RandomStringUtils.randomAlphanumeric(4);
 
             // generate grid and store it to outputFile...
-            //...
-            // Grid grid = Checker.buildGrid(outputFile);
-            // System.out.println(grid);
 
             Grid grid = new Grid(width, height);
             Generator.generateLevel(outputFile, grid);
@@ -79,21 +76,18 @@ public class Main {
             boolean solved = false; 
         
             // load grid from inputFile, solve it and store result to outputFile...
-            // ...
             Grid grid = Checker.buildGrid(inputFile);
             System.out.println(grid);
             solved = Checker.isSolution(grid);
             System.out.println("SOLVED: " + solved);
 
-            System.out.println("\nRunning solver ...\n");
+            System.out.println("\nRunning non-exhaustive solver ...\n");
 
             // lancer le solver
             if(Solver.solveNonExhaustiveSearch(grid)) {
-                System.out.println("solved!");
-                // solved = Checker.isSolution(grid);
-                // System.out.println("SOLVED: " + solved);
-                // System.out.println(grid);
+                System.out.println("SOLVED: " + Checker.isSolution(grid));
                 Generator.generateFileFromGrid(outputFile, grid);
+                System.out.println(grid);
             }
             else {
                 System.out.println("unsolvable!");
@@ -113,6 +107,14 @@ public class Main {
             GUI.startGUI(inputFile);
             solved = Checker.isSolution(grid);
             System.out.println("SOLVED: " + solved);           
+        }
+        else if( cmd.hasOption( "p" )) {
+            System.out.println("Running phineloop player.");
+            inputFile = cmd.getOptionValue( "p" );
+            Grid grid = Checker.buildGrid(inputFile);
+            System.out.println(grid);
+
+            GUI.startGUI(inputFile);
         }
         else {
             throw new ParseException("You must specify at least one of the following options: -generate -check -solve ");           

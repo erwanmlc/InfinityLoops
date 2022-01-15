@@ -38,7 +38,8 @@ public class Checker {
             return grid;
 
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.err.println("File : "+inputFile+" does not exist!");
+            System.exit(-1);
         } catch (IOException e) {
             e.printStackTrace();
             throw new NullPointerException("Error with input file");
@@ -57,6 +58,5 @@ public class Checker {
         return true;
     }
 
-// To be implemented
 	
 }
