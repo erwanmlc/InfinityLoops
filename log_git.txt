@@ -1,0 +1,164 @@
+commit 16e04dc993e6002f30e2e56679928fb87e05b046
+Author: erwanmlc <erwan.moalic@dauphine.eu>
+Date:   Sat Jan 15 20:27:21 2022 +0100
+
+    Finalisation, last changes
+
+commit 952ddd26b36b6e78d466d9c8ad9ce891d8ef3fc6
+Author: erwanmlc <erwan.moalic@dauphine.eu>
+Date:   Mon Dec 27 18:47:03 2021 +0100
+
+    GUI
+
+commit 2132da822215c8531323a6c6a67f0b2eff6214c9
+Author: erwanmlc <erwan.moalic@dauphine.eu>
+Date:   Sun Dec 26 19:34:11 2021 +0100
+
+    Solver: non exhaustive search
+
+commit c5afed385cbd394ca778df235bcef6caa07ebfdb
+Author: sylvainthor <sylvain.thor@laposte.net>
+Date:   Sun Dec 26 04:14:32 2021 +0100
+
+    solver : exhaustive search (+ storing in a solvefile and testing solution)
+
+commit 021fc040ed6e4e2a269a0537357f4a9fd3b85c31
+Author: sylvainthor <sylvain.thor@laposte.net>
+Date:   Sun Dec 26 00:46:53 2021 +0100
+
+    commit juste avant le solver
+
+commit 57df25cdfbecca8dcc7f1e2f579aad6785872bec
+Author: sylvainthor <sylvain.thor@laposte.net>
+Date:   Sat Dec 25 23:56:07 2021 +0100
+
+    solution checker
+
+commit 0b575aab43f4998464f4d8761634996fe9693ea4
+Author: erwanmlc <erwan.moalic@dauphine.eu>
+Date:   Thu Dec 16 13:47:48 2021 +0100
+
+    Taille 10*10, suppression outputfile et ajout randomisation du nom output
+
+commit 34d30dcc44c7dc57620259895154532d41ce54bd
+Author: erwanmlc <erwan.moalic@dauphine.eu>
+Date:   Thu Dec 16 13:06:55 2021 +0100
+
+    Update .classpath et .project pour VSC
+
+commit d44f0c7268e4a4493367f136d3d87611c1c31ecf
+Author: sylvainthor <sylvain.thor@laposte.net>
+Date:   Wed Dec 15 13:37:39 2021 +0100
+
+    rectif getOpposedPieceCoordinates
+
+commit 132988439768aed3833eca864b3f8192fce3e9fe
+Author: sylvainthor <sylvain.thor@laposte.net>
+Date:   Thu Dec 9 17:39:39 2021 +0100
+
+    test-vscode
+
+commit 0ca20ece963ec28ac83dca9b346f5e932ab938cc
+Merge: 1c8e021 d62dedd
+Author: sylvainthor <66024705+sylvainthor@users.noreply.github.com>
+Date:   Mon Dec 6 22:43:03 2021 +0100
+
+    Merge pull request #2 from erwanmlc/Sylvain_Level_Generator
+    
+    Sylvain level generator
+
+commit d62dedd4ffe2864868dc1bc57310c1058e7cd2c7
+Author: sylvainthor <sylvain.thor@laposte.net>
+Date:   Mon Dec 6 22:39:29 2021 +0100
+
+    Generation and storing in a file + building a grid from a file
+
+commit a9e02e98d46e6dd5803fc713ab2fb008c5cbe221
+Author: sylvainthor <sylvain.thor@laposte.net>
+Date:   Mon Dec 6 22:32:11 2021 +0100
+
+    Generation and storing in a file + building a grid from a file
+
+commit 3725677b8b34de836d4df458324d5a14406eb745
+Author: sylvainthor <sylvain.thor@laposte.net>
+Date:   Mon Dec 6 10:36:34 2021 +0100
+
+    Generation of a level + storing in a file
+
+commit e9fae9387c0474fc8a2e856e1b2a080c6eaa7afa
+Author: sylvainthor <sylvain.thor@laposte.net>
+Date:   Mon Dec 6 00:56:13 2021 +0100
+
+    Generation of a level + storing in a file
+
+commit d315285d01a052effce7e957b12895e8f091abc7
+Author: sylvainthor <sylvain.thor@laposte.net>
+Date:   Thu Dec 2 18:45:40 2021 +0100
+
+    test
+
+commit dd1cc5ee39d09e1e7766e78a60ed9148df796a2f
+Author: sylvainthor <sylvain.thor@laposte.net>
+Date:   Thu Dec 2 18:41:18 2021 +0100
+
+    update GUI and Checker
+
+commit 1c8e021219d7e4fb304fc56207e936822ce1255d
+Author: sylvainthor <sylvain.thor@laposte.net>
+Date:   Thu Dec 2 18:37:07 2021 +0100
+
+    maj enumerations: PieceType et Orientation
+
+commit cd4b02bda90fc6e89927b5e7ba47bf51e6a995fd
+Author: sylvainthor <sylvain.thor@laposte.net>
+Date:   Thu Dec 2 16:59:06 2021 +0100
+
+    maj enumerations: PieceType et Orientation
+
+commit 681f772bb9852fc68c75d6011572f018c120cf30
+Author: sylvainthor <sylvain.thor@laposte.net>
+Date:   Thu Dec 2 01:09:39 2021 +0100
+
+    ajout PieceType
+
+commit 8f2151729fe06478a2272442e1b2d87c9ee6d94f
+Author: sylvainthor <sylvain.thor@laposte.net>
+Date:   Thu Dec 2 00:32:16 2021 +0100
+
+    test
+
+commit f49e11d90a150d2b94d7069c916be76352c87483
+Author: sylvainthor <sylvain.thor@laposte.net>
+Date:   Sun Nov 28 17:41:05 2021 +0100
+
+    ajout orientations
+
+commit aaa0e80df94a93b6e422b8e5c67b895608eff4c2
+Author: erwanmlc <91994885+erwanmlc@users.noreply.github.com>
+Date:   Fri Nov 26 14:09:59 2021 +0100
+
+    Sujet Projet Java
+
+commit c5ed7020d608a9f6d07cdf868d2f66df1286a8fd
+Author: erwanmlc <91994885+erwanmlc@users.noreply.github.com>
+Date:   Thu Nov 25 16:17:52 2021 +0100
+
+    Modification README.me
+
+commit 1bddf146a5c081acd16566ec82bd2774d5c53608
+Author: LeoDaVinci280 <leodavinci280@gmail.com>
+Date:   Thu Nov 25 14:04:54 2021 +0100
+
+    Essai
+
+commit 3afae56bd662bfdc39b9d117d8550b481eea1a0f
+Author: erwanmlc <91994885+erwanmlc@users.noreply.github.com>
+Date:   Thu Nov 25 13:07:04 2021 +0100
+
+    Initilisation Projet
+
+commit 557b8eb176f8fa57c2e084f2de6ff0abc3a4c458
+Author: erwanmlc <91994885+erwanmlc@users.noreply.github.com>
+Date:   Thu Nov 25 12:40:51 2021 +0100
+
+    Initial commit
